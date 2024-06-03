@@ -1,0 +1,463 @@
+<doctype html><!-- doctype va primero -->
+  <html lang="es">
+  <!-- evitar dejar en ingles para que el explorador no lo detecte como otro idioma y lo intente traducir -->
+
+  <!-- cabecera, contiene información que es leida por el explorador al ingresar a la pagina -->
+
+  <head>
+    <meta charset="UTF-8"><!-- para volverla compatible con caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- preguntar? -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Carnet de vacunas</title> <!-- titulo -->
+  </head>
+  <!-- fin head -->
+
+
+
+  <style>
+    /* EJEMPLO OBTENIDO DE https://www.scaler.com/topics/bootstrap-tutorial/bootstrap-text/  SE USA SOLAMENTE 1 SOMBRA PARA DAR PROFUNDIDAD Y CONSERVAR LA LEGIBILIDAD DEL TEXTO BLANCO SOBRE FONDOS CLAROS*/
+    .SOMBRAS {
+      text-shadow: 2px 3px 4PX #000000b7;
+    }
+
+    .GENERAL_BLANCO {
+      text-shadow: 2px 3px 4PX #00000037;
+      color: white;
+    }
+
+    .GENERAL_CELESTE {
+      text-shadow: 2px 3px 4PX #00000016;
+      color: rgb(111, 177, 220);
+    }
+
+    .CONTENEDOR_SOMBREADO {
+      box-shadow: 0px 0px 8PX #00000045;
+    }
+  </style>
+
+
+
+
+  <body onload="return sweetalert_inicio()" style="background-color: rgb(158, 215, 255);">
+
+
+
+
+
+
+
+    <!-- COMIENZO NAVBAR (EJEMPLO OBTENIDO DE https://getbootstrap.com/docs/5.3/examples/headers/) -->
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 fixed-top"
+      style="background-color: rgb(158, 215, 255);">
+      <a onclick="return sweetalert_logo()"
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <img src="LOGO CIISA MASCOTAS BLANCO.png" width="50"></IMG>
+        <span class="fs-4 GENERAL_BLANCO" style="font-weight: bold;">CIISA MASCOTAS</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#demo" class="nav-link active CONTENEDOR_SOMBREADO" aria-current="page"
+            style="background-color: white; color: rgb(158, 215, 255); text-shadow: 2px 3px 4PX  #0000001f;">Inicio</a>
+        </li>
+        <li class="nav-item"><a href="#Nosotros" class="nav-link"
+            style="color: white; text-shadow: 2px 3px 4PX  #0000003c;">Nosotros</a></li>
+        <li class="nav-item"><a href="#Vacunas" class="nav-link"
+            style="color: white; text-shadow: 2px 3px 4PX  #0000003c;">Vacunas</a></li>
+        <li class="nav-item"><a href="#Registro" class="nav-link"
+            style="color: white; text-shadow: 2px 3px 4PX  #0000003c;">Registro</a></li>
+        <li class="nav-item"><a href="#adopcion" class="nav-link"
+            style="color: white; text-shadow: 2px 3px 4PX  #0000003c;">Adopción</a></li>
+      </ul>
+    </header>
+    <!-- TERMINO NAVBAR -->
+
+
+
+
+    <!-- solo para mantener el espacio bajo la navbar -->
+    <div class="container-fluid">
+      <img height="50px" src="LOGO CIISA MASCOTAS BLANCO.png" alt="logo">
+    </div>
+    <!-- solo para mantener el espacio bajo la navbar -->
+
+
+
+
+    <!-- CARRUSEL COMIENZO (EJEMPLO OBTENIDO DE https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_carousel&stacked=h) -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <!-- INDICADORES -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div>
+      <!-- SLIDER -->
+      <div class="carousel-inner" style="box-shadow: 0px 0px 8PX #00000045;">
+        <div class="carousel-item active">
+          <img src="CARRUSEL 1.jpg" alt="CARRUSEL 1" class="d-block" style="width:100%">
+          <div class="carousel-caption">
+            <h3 class="SOMBRAS">CIISA MASCOTAS</h3>
+            <p class="SOMBRAS">Te damos la bienvenida a nuestro sitio!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="CARRUSEL 2.jpg" alt="CARRUSEL 2" class="d-block" style="width:100%">
+          <div class="carousel-caption">
+            <h3 class="SOMBRAS">VACUNACIÓN</h3>
+            <p class="SOMBRAS">Información sobre calendario de vacunación, edades recomendadas y mas!</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="CARRUSEL 3.jpg" alt="CARRUSEL 3" class="d-block" style="width:100%">
+          <div class="carousel-caption">
+            <h3 class="SOMBRAS">INSCRIBE A TU MASCOTA!</h3>
+            <p class="SOMBRAS">Se parte de nuestra comunidad e inscribe a tu amigo peludo!</p>
+          </div>
+        </div>
+      </div>
+      <!-- BOTONES -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+    <!-- CARRUSEL TERMINO -->
+
+
+
+
+    <!-- "BIENVENIDOS" COMIENZO -->
+    <div class="container-fluid mt-3">
+      <br><br>
+      <h3 class="GENERAL_BLANCO">Bienvenido a nuestro sitio</h3>
+      <p class="GENERAL_BLANCO">
+        La vacunación es una parte fundamental del cuidado de nuestras mascotas. Asegurarnos de que estén al día con sus
+        vacunas es esencial para mantener su salud y prevenir enfermedades.
+        En Ciisa Mascotas, nos tomamos muy en serio la protección de nuestros peludos amigos a través de programas de
+        vacunación rigurosos y seguimiento constante.
+        Recuerda que las vacunas no solo protegen a nuestras mascotas individuales, sino que también contribuyen a la
+        salud pública al prevenir la propagación de enfermedades zoonóticas.
+        ¡Juntos podemos garantizar que todas las colitas tengan una vida larga, feliz y saludable!
+      </p>
+      <br><br>
+    </div>
+    <!-- "BIENVENIDOS" FIN -->
+
+
+
+
+    <!-- "NOSOTROS" COMIENZO -->
+    <!-- uso de grids obtenido de https://www.w3schools.com/bootstrap5/bootstrap_grid_basic.php -->
+    <div id="Nosotros" class="container-fluid" style="background-color: white; box-shadow: 0px 0px 8PX #00000045;">
+      <div class="row">
+        <div class="col-sm">
+          <br><br>
+          <IMg src="IMG MASCOTA 1.jpg" class="IMG-FLUID ROUNDED CONTENEDOR_SOMBREADO" alt="perros"></IMg>
+          <br><br>
+        </div>
+        <div class="col-sm align-content-center">
+          <br><br>
+          <H3 class="GENERAL_CELESTE">¿Quiénes Somos?</H3>
+          <p class="GENERAL_CELESTE">
+            Somos estudiantes comprometidos con la salud y el bienestar de las mascotas. Nuestra misión es proteger a
+            los peludos miembros de nuestras familias, brindándoles las vacunas necesarias para prevenir enfermedades y
+            promover una vida larga y saludable.
+          </p>
+          <br>
+          <H3 class="GENERAL_CELESTE">Nuestro Propósito</H3>
+          <li class="GENERAL_CELESTE">Vacunación Responsable: Creemos que la prevención es clave. Trabajamos
+            incansablemente para educar a los dueños de mascotas sobre la importancia de las vacunas y cómo estas pueden
+            salvar vidas.</li>
+          <li class="GENERAL_CELESTE">Eventos de Vacunación Gratuitos: Organizamos clínicas de vacunación gratuitas en
+            toda la comunidad universitaria. Nuestros veterinarios y estudiantes capacitados administran las vacunas y
+            brindan consejos sobre cuidados generales.</li>
+          <li class="GENERAL_CELESTE">Conciencia Pública: A través de charlas, talleres y redes sociales, difundimos
+            información sobre la importancia de las vacunas y cómo mantener a nuestras mascotas sanas.</li>
+          <br>
+          <H3 class="GENERAL_CELESTE">Colabora con nosotros</H3>
+          <p class="GENERAL_CELESTE">¿Te apasionan los animales? ¿Quieres marcar la diferencia en la vida de las
+            mascotas? ¡Únete a nuestra comunidad! Juntos, podemos crear un mundo más saludable para nuestros amigos
+            peludos.
+
+            ¡Gracias por ser parte de nuestra misión de proteger y cuidar a las mascotas!
+
+            Espero que esta presentación te sea útil. Si necesitas más detalles o ajustes, no dudes en pedirlo. 😊</p>
+          <br><br>
+        </div>
+      </div>
+      <!-- "NOSOTROS" FIN -->
+
+
+
+
+
+      <!-- COMIENZO TABLA -->
+      <!-- ejemplo obtenido de https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_table_responsive -->
+      <div id="Vacunas" class="row CONTENEDOR_SOMBREADO" style="background-color: rgb(158, 215, 255);">
+        <div class="container mt-3">
+          <BR><BR>
+          <DIV class="d-flex container-fluid">
+            <img src="LOGO CIISA MASCOTAS BLANCO.png" alt="logo" width="50px" height="50px">
+            <H2 class="GENERAL_BLANCO">Por que vacunar a nuestros amigos peludos?</H2>
+          </DIV>
+          <P class="GENERAL_BLANCO">La vacunación de nuestros perros es crucial por varias razones: Prevención de
+            Enfermedades: Las vacunas protegen a nuestros amigos peludos de enfermedades infecciosas como la rabia, el
+            parvovirus, el moquillo, la hepatitis, la leptospirosis y la tos de las perreras. Al vacunarlos, ayudamos a
+            prevenir estas afecciones graves. Inmunidad Duradera: Las vacunas estimulan el sistema inmunológico de los
+            perros para que desarrollen una respuesta defensiva contra los patógenos. Esto les proporciona inmunidad
+            duradera y los protege a lo largo de su vida. Protección de la Salud Pública: Al vacunar a nuestros perros,
+            también contribuimos a la salud pública al prevenir la propagación de enfermedades zoonóticas que pueden
+            afectar a los humanos. Larga Vida Saludable: Las vacunas permiten que nuestros compañeros caninos tengan una
+            vida más larga y saludable al prevenir enfermedades graves. Recuerda seguir el calendario de vacunación
+            recomendado por tu Médico Veterinario para garantizar la salud y el bienestar de tu mascota.</P>
+          <h2 class="GENERAL_BLANCO">Tabla de Vacunación</h2>
+          <p class="GENERAL_BLANCO">Aqui tienes los precios de las vacunas para tu perrito:</p>
+
+          <div class="table-responsive ROUNDED">
+            <table class="table table-bordered CONTENEDOR_SOMBREADO">
+              <thead>
+                <tr>
+                  <th style="color: rgb(111, 177, 220);">Edad Minima</th>
+                  <th style="color: rgb(111, 177, 220);">Vacuna</th>
+                  <th style="color: rgb(111, 177, 220);">Duración</th>
+                  <th style="color: rgb(111, 177, 220);">Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="color: rgb(111, 177, 220);">1 y 1/2 Meses</td>
+                  <td style="color: rgb(111, 177, 220);">Parvo Corona</td>
+                  <td style="color: rgb(111, 177, 220);">1 Año</td>
+                  <td style="color: rgb(111, 177, 220);">$10.000</td>
+                </tr>
+                <tr>
+                  <td style="color: rgb(111, 177, 220);">2 Meses</td>
+                  <td style="color: rgb(111, 177, 220);">Octuple Canina</td>
+                  <td style="color: rgb(111, 177, 220);">1 Año</td>
+                  <td style="color: rgb(111, 177, 220);">$15.000</td>
+                </tr>
+                <tr>
+                  <td style="color: rgb(111, 177, 220);">3 Meses</td>
+                  <td style="color: rgb(111, 177, 220);">Refuerzo Polivalente</td>
+                  <td style="color: rgb(111, 177, 220);">1 Año</td>
+                  <td style="color: rgb(111, 177, 220);">$14.000</td>
+                </tr>
+                <tr>
+                  <td style="color: rgb(111, 177, 220);">4 Meses</td>
+                  <td style="color: rgb(111, 177, 220);">Refuerzo Polivalente</td>
+                  <td style="color: rgb(111, 177, 220);">1 Año</td>
+                  <td style="color: rgb(111, 177, 220);">$14.000</td>
+                </tr>
+                <tr>
+                  <td style="color: rgb(111, 177, 220);">6 Meses</td>
+                  <td style="color: rgb(111, 177, 220);">Antirrabica</td>
+                  <td style="color: rgb(111, 177, 220);">1 Año</td>
+                  <td style="color: rgb(111, 177, 220);">$14.000</td>
+                </tr>
+                <tr>
+                  <td style="color: rgb(111, 177, 220);">1 año</td>
+                  <td style="color: rgb(111, 177, 220);">Antirrabica</td>
+                  <td style="color: rgb(111, 177, 220);">Anual</td>
+                  <td style="color: rgb(111, 177, 220);">$12.000</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- FIN TABLA -->
+
+
+
+      <!-- COMIENZO TABLA 2-->
+      <!-- ejemplo obtenido de https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_table_responsive -->
+      <div id="adopcion" class="row CONTENEDOR_SOMBREADO" style="background-color: rgb(158, 215, 255);">
+        <div class="container mt-3">
+          <BR><BR>
+          <DIV class="d-flex container-fluid">
+            <img src="LOGO CIISA MASCOTAS BLANCO.png" alt="logo" width="50px" height="50px">
+            <H2 class="GENERAL_BLANCO">Por que Es bueno adoptar a una mascota?</H2>
+          </DIV>
+          <P class="GENERAL_BLANCO">La adopción de mascotas es beneficiosa tanto para los animales como para las
+            personas, y tiene un impacto positivo en el mundo. Aquí te presento algunas razones por las que adoptar una
+            mascota es una elección maravillosa:
+
+            Reducción de la Sobrepoblación:
+            Adoptar ayuda a reducir la sobrepoblación de animales en refugios y protectoras. Al darle un hogar a un
+            animal adoptado, liberas espacio para otros que necesitan ayuda.
+            Bienestar Emocional:
+            Las mascotas brindan compañía y afecto incondicional. Tener un perro o un gato en casa reduce la soledad y
+            el estrés, y mejora el bienestar psicológico.
+            Beneficios para la Salud:
+            Estudios han demostrado que las mascotas reducen la presión arterial, mejoran la salud cardiovascular y
+            aumentan la actividad física.
+            Además, acariciar a un animal libera endorfinas, lo que nos hace sentir más felices.
+            Segunda Oportunidad:
+            Muchos animales en adopción han tenido experiencias difíciles. Al darles un hogar, les brindas una segunda
+            oportunidad y les ayudas a recuperarse.
+            Evitar el Maltrato Animal:
+            Al adoptar, evitas apoyar criaderos inhumanos o fábricas de cachorros. Estas prácticas a menudo descuidan el
+            bienestar de los animales.
+            Tendencia Sostenible:
+            Adoptar es una elección consciente y sostenible. Contribuyes a una cultura de cuidado y responsabilidad
+            hacia los animales.</P>
+          <h2 class="GENERAL_BLANCO">Adopción</h2>
+          <p class="GENERAL_BLANCO">Aqui tienes a algunos amigos peludos que están buscando a una familia!</p>
+
+          <div class="table-responsive ROUNDED">
+
+            <table id="adopcion" class="table table-bordered CONTENEDOR_SOMBREADO">
+              <tr>
+                <th style="color: rgb(111, 177, 220);">nombre</th>
+                <th style="color: rgb(111, 177, 220);">tipo</th>
+                <th style="color: rgb(111, 177, 220);">edad</th>
+                <th style="color: rgb(111, 177, 220);">genero</th>
+                <th style="color: rgb(111, 177, 220);">imagen</th>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- FIN TABLA -->
+
+
+
+      <!-- FORMULARIO DE REGISTRO COMIENZO -->
+      <!-- EJEMPLO OBTENIDO DE https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_form&stacked=h -->
+      <div id="Registro" class="container mt-3">
+        <br><br>
+        <h2 class="GENERAL_CELESTE">Formulario de Registro</h2>
+        <form action="/action_page.php">
+          <div class="mb-3 mt-3">
+            <label class="GENERAL_CELESTE" for="email">Correo:</label>
+            <input type="email" class="form-control" id="email" placeholder="Correo" name="email">
+          </div>
+          <div class="mb-3">
+            <label class="GENERAL_CELESTE" for="pwd">Contraseña:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Contraseña" name="pswd">
+          </div>
+          <div class="mb-3">
+            <label class="GENERAL_CELESTE" for="phone">Telefono:</label>
+            <input type="phone" class="form-control" id="phn" placeholder="Telefono" name="phone">
+          </div>
+          <div class="mb-3">
+            <label class="GENERAL_CELESTE" for="adress">Dirección:</label>
+            <input type="adress" class="form-control" id="adrss" placeholder="Dirección" name="adress">
+          </div>
+          <div class="mb-3">
+            <label class="GENERAL_CELESTE" for="name">Nombre:</label>
+            <input type="name" class="form-control" id="name" placeholder="Nombre" name="name">
+          </div>
+          <div class="form-check mb-3">
+            <label class="form-check-label GENERAL_CELESTE">
+              <input class="form-check-input" type="checkbox" name="remember"> Recordarme
+            </label>
+          </div>
+          <button onclick="return obtener_formulario_jquery()" type="button" class="btn btn-primary">Enviar</button>
+          <!-- data-bs-toggle="modal" data-bs-target="#myModal">Enviar</button> -->
+        </form>
+        <br><br>
+      </div>
+      <!-- formulario de registro fin -->
+      <div id="errores"></div>
+
+
+      <!-- MODAL EJEMPLO OBTENIDO DE https://www.w3schools.com/bootstrap5/tryit.asp?filename=trybs_modal&stacked=h-->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Muchas gracias!</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              Tu perrito lo agradece! c:
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- FIN MODAL -->
+
+      <!-- segundo modal (para inicio) -->
+      <div class="modal fade" id="myModalinicio">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Bienvenido!</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              Te damos la bienvenida a nuestro sitio web, se nota que eres alguien preocupado por tu mascota.
+              si es la primera vez que ingresas, te recomendamos que completes nuestro formulario de registro!
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- FOOTER -->
+      <div class="row" style="background-color: rgb(158, 215, 255);">
+        <ul class="GENERAL_BLANCO">CIISA Instituto de ciencias tecnologicas</ul>
+        <ul class="GENERAL_BLANCO">Av. Libertador Bernardo O'Higgins #2221, Santiago, Chile. Metro República.</ul>
+        <ul class="GENERAL_BLANCO">contacto: +56 9 3253 4388</ul>
+        <ul class="GENERAL_BLANCO">Atención: Lunes a Viernes de 09:00 a 18:00 hrs.</ul>
+      </div>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- SCRIPT DEL QUE DEPENDEN LAS ANIMACIONES DEL CARRUSEL-->
+  <script src="main.js"></script>
+  <script>
+    $(document).ready(function () {
+      var dataTabla = ""
+      $.ajax({
+        url: 'https://huachitos.cl/api/animales',
+        dataType: 'json',
+        success: function (data) {
+          // console.log(data)
+          var mascotas = data.data
+          for (var i = 0; i < mascotas.length; i++) {
+            var fila = ""
+            // console.log(mascotas[i])
+            // console.log(mascotas[i].nombre)
+            // console.log(mascotas[i].tipo)
+            // console.log(mascotas[i].edad)
+            // console.log(mascotas[i].genero)
+            // console.log(mascotas[i].imagen)
+            fila ="<tr><td>"+mascotas[i].nombre+"</td><td>"+mascotas[i].tipo+"</td><td>"+mascotas[i].edad+"</td><td>"+mascotas[i].genero+"</td><td><img src="+mascotas[i].imagen+" width=50 ></td></tr>"
+            dataTabla = dataTabla + fila
+            $("#adopcion").append(fila)
+          }
+        }
+      })
+    })
+  </script>
+
+  </html>
